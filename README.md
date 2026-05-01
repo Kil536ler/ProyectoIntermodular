@@ -5,7 +5,6 @@ configs/
 │   ├── dmz/
 │   │   ├── nginx/
 │   │   │   ├── site1
-│   │   │   └── site2
 │   │   ├── vsftpd.conf
 │   │   └── reverse-ssh.service
 │   └── dhcp-dns/
