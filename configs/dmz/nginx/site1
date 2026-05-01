@@ -1,0 +1,25 @@
+
+    server {
+        listen 443 ssl;
+        listen [::]:443 ssl;
+        ssl_certificate /etc/ssl/certs/site1.hosting.local.crt;
+        ssl_certificate_key /etc/ssl/private/site1.hosting.local.key;
+        include snippets/ssl-params.conf;
+
+        root /var/www/site1.hosting.local/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name site1.hosting.local www.site1.hosting.local;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+    }
+    server {
+        listen 80;
+        listen [::]:80;
+
+        server_name site1.hosting.local www.site1.hosting.local;
+
+        return 302 https://$server_name$request_uri;
+    }
