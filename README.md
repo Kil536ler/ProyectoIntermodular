@@ -1,3 +1,4 @@
+'''
 configs/
 │   ├── firewall/
 │   │   └── nftables.conf
@@ -14,3 +15,4 @@ configs/
 ├── docs/
 │   └── memoria.docx
 └── README.md
+'''
